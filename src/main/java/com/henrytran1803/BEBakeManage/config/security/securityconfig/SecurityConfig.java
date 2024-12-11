@@ -80,6 +80,12 @@ public class SecurityConfig {
 @Bean
 public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
+    configuration.setAllowedOrigins(Arrays.asList(
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+            "http://192.168.2.3:3000", // IP của laptop
+            "http://192.168.2.19:3000" // IP của điện thoaại
+    ));
 
     configuration.setAllowedOriginPatterns(Collections.singletonList("*"));
 
