@@ -245,10 +245,10 @@ public class BillService {
                 return ApiResponse.Q_failure(null, QuyExeption.INSUFFICIENT_STOCK);
             }
 
-            // Kiểm tra hạn sử dụng
-            if (productBatch.getExpirationDate().isBefore(LocalDateTime.now())) {
-                return ApiResponse.Q_failure(null, QuyExeption.PRODUCT_BATCH_EXPIRED);
-            }
+//            // Kiểm tra hạn sử dụng
+//            if (productBatch.getExpirationDate().isBefore(LocalDateTime.now())) {
+//                return ApiResponse.Q_failure(null, QuyExeption.PRODUCT_BATCH_EXPIRED);
+//            }
 
             // Tính giảm giá
             double dailyDiscount = productBatch.getDailyDiscount() != null ? productBatch.getDailyDiscount() : 0.0;
